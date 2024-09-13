@@ -1,7 +1,7 @@
 import turtle
 
 # Set up my turtle
-turtle.speed(10)
+turtle.speed(100)
 turtle.shape('turtle')
 turtle.bgcolor('black')
 
