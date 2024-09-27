@@ -1,10 +1,11 @@
-def intro():
+def intro(): -> None
     # Greet user 
     print("Hi there, welcome! What's your name, buddy?")
     name = input("Enter your name: ")
     
     # introduction 
-    print(f"\nNice to meet you, {name}! I'm here to help guide you through the world of investment, and to show you how important it is for your future.")
+    print(f"\nNice to meet you, {name}! I'm here to help guide you through the world of investment,
+           and to show you how important it is for your future.")
     
     # monthly saving
     monthly_saving = float(input("\nHow much can you save each month, or do you have a number in mind? Enter your monthly savings: "))
@@ -15,7 +16,7 @@ def intro():
     # Display future value examples for different investments
     show_investment_scenarios(monthly_saving)
 
-def show_investment_scenarios(monthly_saving):
+def show_investment_scenarios(monthly_saving: float) -> None:
     # Define sample interest rates for different investment types
     bank_rate = 0.01
     fund_rate = 0.05
@@ -29,7 +30,8 @@ def show_investment_scenarios(monthly_saving):
     stocks_value = future_value(monthly_saving, stocks_rate, years)
     crypto_value = future_value(monthly_saving, crypto_rate, years)
     
-    print(f"Why 20 years? Because after 20 years, the risk almost disappears and your investments can grow!\n")
+    print(f"Why 20 years? Because after 20 years,
+           the risk almost disappears and your investments can grow!\n")
     
     # Show the calculated future values
     print(f"Bank Savings (1% interest): ${bank_value:.2f}")
@@ -38,7 +40,7 @@ def show_investment_scenarios(monthly_saving):
     print(f"Cryptocurrency (12% interest): ${crypto_value:.2f}")
     
     print("\n**Remember:**")
-    print("The higher the potential return, the higher the risk. But with the right knowledge, you can turn 'risk' into opportunity!")
+    print("The higher the potential return,/the higher the risk. But with the right knowledge, you can turn 'risk' into opportunity!")
 
     input("\nTap to continue...")
 
@@ -89,7 +91,8 @@ def recommend_investment(monthly_saving, risk_profile, years):
     
     future_investment_value = future_value(monthly_saving, expected_return, years)
     
-    print(f"\nBased on your goal, your monthly savings, and your risk profile ({risk_profile}), you should aim for assets generating approximately {expected_return*100}% return.")
+    print(f"\nBased on your goal, your monthly savings,
+           and your risk profile ({risk_profile}), you should aim for assets generating approximately {expected_return*100}% return.")
     print(f"If you save {monthly_saving:.2f} per month for {years} years, you could accumulate around ${future_investment_value:.2f}.\n")
 
 def future_value(monthly_saving, annual_rate, years):
@@ -100,4 +103,4 @@ def future_value(monthly_saving, annual_rate, years):
     return future_value
 
 # Run the intro to start the program
-intro()
+intro() 
